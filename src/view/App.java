@@ -1,5 +1,6 @@
 package view;
 
+import java.util.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -20,19 +21,24 @@ public class App {
 		
 		List<Seller> seller2 = sellerDao.findByDepartment(new Department(1, null));
 		
-		System.out.println("=== TEST 1: FindById ===");
+		System.out.println("=== TEST 1: seller FindById ===");
 		System.out.println(seller);
 		
-		System.out.println("\n=== TEST 2: FindByDepartment ===");
+		System.out.println("\n=== TEST 2: seller FindByDepartment ===");
 		for(Seller obj : seller2) {
-		System.out.println(obj);
+			System.out.println(obj);
 		}
 		
-		System.out.println("\n=== TEST 3: FindAll ===");
+		System.out.println("\n=== TEST 3: seller FindAll ===");
 		seller2 = sellerDao.findAll();
 		for(Seller obj : seller2) {
 			System.out.println(obj);
 		}
+		
+		System.out.println("\n=== TEST 4: seller Insert ===");
+		Seller newSeller = new Seller(null, "Otilha", "otilha@gamil.com", new Date(), 2800.00, new Department(4, null));
+		sellerDao.insert(newSeller);
+		System.out.println("Included with sucess!, id = " + newSeller.getId());
 	}
 
 }

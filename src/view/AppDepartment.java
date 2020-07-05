@@ -18,9 +18,14 @@ public class AppDepartment {
 		System.out.println("Sucess, Id " + dep.getId());
 		
 		System.out.println("\n=== TEST 2: Update ====");
-		depDao.update(new Department(5, "Music"));
+		dep = depDao.findById(10);
+		dep.setName("Lavanderia");
+		depDao.update(dep);
 		System.out.println("Update with Sucess");
 		
+		System.out.println("\n=== TEST 3: FindById ====");
+		dep = depDao.findById(3);
+		System.out.println(dep);
 		
 	}
 

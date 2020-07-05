@@ -17,6 +17,10 @@ public class AppDepartment {
 		depDao.insert(dep);
 		System.out.println("Sucess, Id " + dep.getId());
 		
+		System.out.println("\n=== TEST 2: Update ====");
+		depDao.update(new Department(5, "Music"));
+		System.out.println("Update with Sucess");
+		
 		
 	}
 

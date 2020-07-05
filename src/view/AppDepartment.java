@@ -34,6 +34,10 @@ public class AppDepartment {
 		for(Department list : listDep) {
 			System.out.println(list);
 		}
+		
+		System.out.println("\n=== TEST 5: DeleteById ====");
+		depDao.deleteById(13);
+		System.out.println("Excluded with sucess");
 	}
 
 }
